@@ -1,7 +1,7 @@
 #!/usr/bin/with-contenv bash
 # ==============================================================================
-# Community Hass.io Add-ons: AirSonos
-# Runs the AirSonos server
+# Community Hass.io Add-ons: deCONZ
+# Runs the deCONZ gateway server
 # ==============================================================================
 # shellcheck disable=SC1091
 source /usr/lib/hassio-addons/base.sh
@@ -22,7 +22,9 @@ fi
 # Connect to zigbee adapter
 options+=(--auto-connect=1)
 
-options+=(--dbg-info=1)
+if hass.config.has_value 'debug'; then
+    options+=("--dbg-info=$(hass.config.get 'debug')")
+fi
 
 # Bind to a specific interface
 if hass.config.has_value 'httpport'; then
