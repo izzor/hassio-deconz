@@ -1,6 +1,6 @@
 {
   "name": "deCONZ",
-  "version": "2.05.22",
+  "version": "2.05.49",
   "slug": "deconz",
   "description": "deCONZ",
   "startup": "services",
