@@ -5,7 +5,7 @@ FROM ${BUILD_FROM}
 RUN apt-get update \
     && apt-get -y --no-install-recommends install xauth wget libqt5core5a libqt5network5 libqt5widgets5 libqt5gui5 libqt5serialport5 libqt5websockets5 libqt5sql5 libcap2-bin sqlite3 xpra \
     && cd /tmp \
-    && wget -O deconz.deb https://www.dresden-elektronik.de/rpi/deconz/beta/deconz-2.05.49-qt5.deb \
+    && wget -O deconz.deb https://www.dresden-elektronik.de/rpi/deconz/beta/deconz-2.05.50-qt5.deb \
     && dpkg --ignore-depends wiringpi -i /tmp/deconz.deb \
     && rm -rf /tmp/* /var/lib/apt/lists/* \
     && ln -s /config/deconz/local /root/.local \
